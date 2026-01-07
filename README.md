@@ -1,46 +1,71 @@
-# fpna-driver-based-revenue-model-
-Python-based FP&amp;A project combining a driver-based SaaS revenue model with automated monthly actual vs budget variance analysis and dashboard-ready outputs. 
+## FP&A Driver-Based Revenue Model & Variance Analysis
 
-----
+A Python-based FP&A project that combines a driver-based planning model with an automated monthly actual vs budget variance analysis workflow. The project mirrors how FP&A teams translate operating assumptions into forecasts and then reconcile performance through structured variance analysis and management-ready reporting.
 
-## Project Overview 
+## Problem Context
 
-The goal of this project was to move beyond top-down forecasting and build financial models based on underlying business drivers. The project integrates Python-based analysis with spreadsheet-based dashboards to mirror how FP&A teams operate in practice. 
+Top-down forecasting approaches often obscure the underlying business drivers that explain financial performance. FP&A teams rely on driver-based planning models and systematic variance analysis to understand why results differ from plan and to communicate those insights clearly to stakeholders.
 
----
+This project was built to replicate that end-to-end FP&A workflow by linking a driver-based planning model with a Python-driven variance analysis engine and spreadsheet-based dashboards.
 
-## Key Components 
+## Project Overview
 
-### 1. Driver-Based Revenue Model 
-- Modeled SaaS revenue using business drivers rather than static growth assumptions
-- Focused on understanding how changes in customers, pricing, and expansion impact revenue
-- Desinged to support sensitivity analysis and strategic decison-making 
+The workflow integrates planning, analysis, and reporting layers commonly used in FP&A:
 
-### 2. Monthly Variance Analysis Engine 
-- Built a Python-based engine to compare actuals vs budget
-- Calculated dollar and percentage variances 
-- Applied favorable / unfavorable logic based on FP&A conventions 
-- Exported dashboard-ready outputs for visualizations 
+- A driver-based planning model defining monthly budget assumptions  
+- A Python engine performing automated actual vs budget variance analysis  
+- Spreadsheet-based dashboards designed for management review  
 
----
+## Key Components
 
-## Dashboards & Outputs
+### 1. Driver-Based Planning Model
 
-The outputs from the Python models are visualzied using Google Sheets 
+- Maintained as a standalone FP&A planning workbook  
+- Defines monthly budget assumptions and revenue drivers  
+- Serves as the source of truth for variance analysis inputs  
 
----
+The planning model is located in:
 
-## Tools & Technolgies 
-- Python (pandas) 
-- Google Sheets (pivot tables and charts) 
-- VS Code 
-- GitHub 
+05_planning_models/Monthly Variance Analysis Engine.xlsx
 
-## Key Takeaways 
+### 2. Monthly Variance Analysis Engine
 
-- Driver-based models provide more insight than top-down forecasts 
-- Variance analysis is most efffective when paired with clear visuals
-- Automating FP&A workflows consistency and scalability 
+- Python-based engine comparing actuals vs budget  
+- Calculates dollar and percentage variances  
+- Applies favorable / unfavorable logic using FP&A conventions  
+- Exports structured outputs for downstream reporting  
 
-## Related Finanical Modeling Work 
-- In addition to the variance analysis workflow shown here, this project was informed by a broader SaaS operating model built in Google Sheets. The model incorporates headcount planning, payroll and non-payroll operating expenses, and driver-based subscription revenue assumptions to support forward looking FP&A analysis.
+Core outputs are written to the `03_outputs/` directory for traceability and reuse.
+
+### 3. Dashboards and Reporting Artifacts
+
+- Variance outputs are visualized using Google Sheets pivot tables and charts  
+- Dashboards are designed to mirror management-facing FP&A reporting  
+
+A snapshot of the final dashboard is included in:
+
+04_dashboards/monthly_variance_by_account.png
+
+
+This represents the reporting layer of the workflow rather than exploratory analysis.
+
+## Key Takeaways
+
+- Driver-based planning provides more insight than top-down forecasting  
+- Variance analysis is most effective when paired with clear visual reporting  
+- Separating planning, analysis, and reporting improves transparency  
+- Automating repeatable FP&A workflows improves consistency and scalability  
+
+## Repository Structure
+
+The repository is organized to reflect a typical FP&A workflow rather than a standalone application.
+
+fpna-driver-based-revenue-model/
+├── 01_data/ # Actuals and input data
+├── 02_models/ # Python variance analysis logic
+├── 03_outputs/ # CSV outputs from variance engine
+├── 04_dashboards/ # Management-facing reporting artifacts
+├── 05_planning_models/ # Driver-based FP&A planning models
+├── README.md # Project documentation
+
+
